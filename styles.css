@@ -29,3 +29,10 @@
 @media(max-width:900px){.review-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.review-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.review-card{padding:15px}.review-card h3{font-size:16px}.hero-about{background-position:46% center}.hero-about:before{background:linear-gradient(90deg,rgba(7,14,13,.68),rgba(7,14,13,.30))}.hero-junior{background-position:43% center}}
 
 .review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.review-card blockquote{font-size:16px;line-height:1.55;color:#262b29;margin:14px 0 18px;font-weight:400}.review-card h3{font-size:16px;margin:0 0 4px}.review-card p{font-size:12px}@media(max-width:800px){.review-grid{grid-template-columns:1fr}.review-card{padding:22px}}
+
+/* Final photography and About Mike framing */
+.hero-junior{background-image:url('junior-header-closeup.jpg');background-position:center 50%}
+.hero-fitting{background-image:url('fitting-header-shafts.jpg');background-position:center 50%}
+.hero-about{background-image:url('about-coaching.jpg');background-size:125% auto;background-position:left 43%}
+.hero-about:before{background:linear-gradient(90deg,rgba(7,14,13,.76) 0%,rgba(7,14,13,.27) 58%,rgba(7,14,13,.08) 100%)}
+@media(max-width:620px){.hero-about{background-size:auto 110%;background-position:18% center}.hero-junior{background-position:47% center}.hero-fitting{background-position:37% center}}
