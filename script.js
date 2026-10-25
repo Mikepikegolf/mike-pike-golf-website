@@ -9,6 +9,7 @@ document.querySelector('.menu')?.addEventListener('click',()=>{let el=document.q
   const button=form.querySelector('button[type="submit"]');
   button.disabled=true;
   button.textContent='Sending…';
+  status.className='form-status';
   status.textContent='Sending your request…';
   const data=new FormData(form);
   data.append('_subject','Mike Pike Golf — Appointment Request');
@@ -24,11 +25,13 @@ document.querySelector('.menu')?.addEventListener('click',()=>{let el=document.q
     if(!response.ok||result.success===false||result.success==='false')throw new Error('Submission not accepted');
     form.reset();
     update();
-    status.textContent='Request sent successfully! Thank you. Mike will follow up to confirm availability. Your appointment is not booked yet.';
-    status.style.color='#286343';
+    status.className='form-status form-status--success';
+    status.innerHTML='<span class="form-status__icon" aria-hidden="true">✓</span><h3>Appointment Request Sent!</h3><p>Thank you for contacting Mike Pike Golf.</p><p>Your request has been received. Mike will contact you personally to confirm your appointment.</p><p><strong>Your appointment is not yet confirmed.</strong></p>';
+    status.scrollIntoView({behavior:'smooth',block:'center'});
+    status.focus({preventScroll:true});
   }catch(err){
+    status.className='form-status form-status--error';
     status.textContent='Your request could not be sent. Please email mikepikegolf@gmail.com directly.';
-    status.style.color='#a12c2c';
   }finally{
     button.disabled=false;
     button.textContent='Send Appointment Request';
