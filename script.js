@@ -22,10 +22,10 @@ document.querySelector('.menu')?.addEventListener('click',()=>{let el=document.q
     });
     const result=await response.json();
     if(!response.ok||result.success===false||result.success==='false')throw new Error('Submission not accepted');
-    status.textContent='Thank you. Your appointment request has been submitted. Mike will follow up to confirm availability. No appointment is booked yet.';
-    status.style.color='#286343';
     form.reset();
     update();
+    status.textContent='Request sent successfully! Thank you. Mike will follow up to confirm availability. Your appointment is not booked yet.';
+    status.style.color='#286343';
   }catch(err){
     status.textContent='Your request could not be sent. Please email mikepikegolf@gmail.com directly.';
     status.style.color='#a12c2c';
